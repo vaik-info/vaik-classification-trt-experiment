@@ -18,7 +18,7 @@ docker build -t g4dnxl_ed_experiment -f ./Dockerfile.g4dn.xlarge .
 sudo docker run --runtime=nvidia \
            --name g4dnxl_ed_experiment_container \
            --rm \
-           -v ~/.vaik-mnist-detection-dataset:/workspace/vaik-mnist-detection-dataset \
+           -v ~/.vaik-mnist-classification-dataset:/workspace/vaik-mnist-classification-dataset \
            -v ~/output_trt_model:/workspace/output_trt_model \
            -v $(pwd):/workspace/source \
            -it g4dnxl_ed_experiment /bin/bash
@@ -31,7 +31,7 @@ sudo docker build -t jxnj502_experiment -f ./Dockerfile.jetson_xavier_nx_jp_502 
 sudo docker run --runtime=nvidia \
            --name jxnj502_experiment_container \
            --rm \
-           -v ~/.vaik-mnist-detection-dataset:/workspace/vaik-mnist-detection-dataset \
+           -v ~/.vaik-mnist-classification-dataset:/workspace/vaik-mnist-classification-dataset \
            -v ~/output_trt_model:/workspace/output_trt_model \
            -v $(pwd):/workspace/source \
            -it jxnj502_experiment /bin/bash
