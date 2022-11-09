@@ -43,9 +43,9 @@ sudo docker run --runtime=nvidia \
 
 ```shell
 python3 inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
-                --input_classes_path '~/vaik-mnist-classification-dataset/classes.txt' \
-                --input_image_dir_path '~/vaik-mnist-classification-dataset/valid' \
-                --output_json_dir_path '~/vaik-mnist-classification-dataset/valid_inference'
+                --input_classes_path '/workspace/vaik-mnist-classification-dataset/classes.txt' \
+                --input_image_dir_path '/workspace/vaik-mnist-classification-dataset/valid' \
+                --output_json_dir_path '/workspace/vaik-mnist-classification-dataset/valid_inference'
 ```
 
 - input_image_dir_path
@@ -70,7 +70,7 @@ python3 inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
 ```json
 {
     "answer": "one",
-    "image_path": "/home/kentaro/vaik-mnist-classification-dataset/valid/one/valid_000000000.jpg",
+    "image_path": "/workspace/vaik-mnist-classification-dataset/valid/one/valid_000000000.jpg",
     "label": [
         "one",
         "seven",
@@ -102,8 +102,8 @@ python3 inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
 ### Calc ACC
 
 ```shell
-python3 calc_acc.py --input_json_dir_path '~/vaik-mnist-classification-dataset/valid_inference' \
-                --input_classes_path '~/vaik-mnist-classification-dataset/classes.txt'
+python3 calc_acc.py --input_json_dir_path '/workspace/vaik-mnist-classification-dataset/valid_inference' \
+                --input_classes_path '/workspace/vaik-mnist-classification-dataset/classes.txt'
 ```
 
 #### Output
