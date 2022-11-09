@@ -9,13 +9,13 @@ from tqdm import tqdm
 from vaik_classification_trt_inference.trt_model import TrtModel
 
 
-def main(input_saved_model_dir_path, input_classes_path, input_image_dir_path, output_json_dir_path):
+def main(input_saved_model_dir_path, input_classes_path, input_image_dir_path, output_json_dir_path, preprocess):
     os.makedirs(output_json_dir_path, exist_ok=True)
     with open(input_classes_path, 'r') as f:
         classes = f.readlines()
     classes = tuple([label.strip() for label in classes])
 
-    model = TrtModel(input_saved_model_dir_path, classes)
+    model = TrtModel(input_saved_model_dir_path, classes, preprocess)
 
     types = ('*.jpg', '*.jpeg', '*.png', '*.JPG', '*.JPEG', '*.PNG')
     image_path_list = []
@@ -44,6 +44,7 @@ if __name__ == '__main__':
     parser.add_argument('--input_classes_path', type=str, default='~/.vaik-mnist-classification-dataset/classes.txt')
     parser.add_argument('--input_image_dir_path', type=str, default='~/.vaik-mnist-classification-dataset/valid')
     parser.add_argument('--output_json_dir_path', type=str, default='~/.vaik-mnist-classification-dataset/valid_inference')
+    parser.add_argument('--preprocess', type=str, default=None)
     args = parser.parse_args()
 
     args.input_saved_model_dir_path = os.path.expanduser(args.input_saved_model_dir_path)
