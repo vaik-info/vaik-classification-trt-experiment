@@ -40,12 +40,21 @@ sudo docker run --runtime=nvidia \
 ## Usage
 
 ### Create json file
-
+- fp16
 ```shell
 python3 inference.py --input_saved_model_dir_path '/workspace/output_trt_model/model.trt' \
                 --input_classes_path '/workspace/vaik-mnist-classification-dataset/classes.txt' \
                 --input_image_dir_path '/workspace/vaik-mnist-classification-dataset/valid' \
                 --output_json_dir_path '/workspace/vaik-mnist-classification-dataset/valid_inference'
+```
+
+- int8
+```shell
+python3 inference.py --input_saved_model_dir_path '/workspace/output_trt_model/model.trt' \
+                --input_classes_path '/workspace/vaik-mnist-classification-dataset/classes.txt' \
+                --input_image_dir_path '/workspace/vaik-mnist-classification-dataset/valid' \
+                --output_json_dir_path '/workspace/vaik-mnist-classification-dataset/valid_inference' \
+                --preprocess 'V2'
 ```
 
 - input_image_dir_path
