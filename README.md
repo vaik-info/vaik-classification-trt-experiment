@@ -42,7 +42,7 @@ sudo docker run --runtime=nvidia \
 ### Create json file
 
 ```shell
-python inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
+python3 inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
                 --input_classes_path '~/.vaik-mnist-detection-dataset/classes.txt' \
                 --input_image_dir_path '~/.vaik-mnist-detection-dataset/valid' \
                 --output_json_dir_path '~/.vaik-mnist-detection-dataset/valid_inference'
@@ -102,7 +102,7 @@ python inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
 ### Calc ACC
 
 ```shell
-python calc_acc.py --input_json_dir_path '~/.vaik-mnist-classification-dataset/valid_inference' \
+python3 calc_acc.py --input_json_dir_path '~/.vaik-mnist-classification-dataset/valid_inference' \
                 --input_classes_path '~/.vaik-mnist-classification-dataset/classes.txt'
 ```
 
