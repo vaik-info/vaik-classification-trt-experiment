@@ -43,9 +43,9 @@ sudo docker run --runtime=nvidia \
 
 ```shell
 python3 inference.py --input_saved_model_dir_path '~/output_model/model.trt' \
-                --input_classes_path '~/.vaik-mnist-detection-dataset/classes.txt' \
-                --input_image_dir_path '~/.vaik-mnist-detection-dataset/valid' \
-                --output_json_dir_path '~/.vaik-mnist-detection-dataset/valid_inference'
+                --input_classes_path '~/.vaik-mnist-classification-dataset/classes.txt' \
+                --input_image_dir_path '~/.vaik-mnist-classification-dataset/valid' \
+                --output_json_dir_path '~/.vaik-mnist-classification-dataset/valid_inference'
 ```
 
 - input_image_dir_path
