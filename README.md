@@ -53,8 +53,7 @@ python3 inference.py --input_saved_model_dir_path '/workspace/output_trt_model/m
 python3 inference.py --input_saved_model_dir_path '/workspace/output_trt_model/model.trt' \
                 --input_classes_path '/workspace/vaik-mnist-classification-dataset/classes.txt' \
                 --input_image_dir_path '/workspace/vaik-mnist-classification-dataset/valid' \
-                --output_json_dir_path '/workspace/vaik-mnist-classification-dataset/valid_inference' \
-                --preprocess 'V2'
+                --output_json_dir_path '/workspace/vaik-mnist-classification-dataset/valid_inference'
 ```
 
 - input_image_dir_path
